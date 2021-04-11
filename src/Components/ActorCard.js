@@ -2,8 +2,7 @@ import React from "react";
 import "./ActorCard.css";
 
 import { Card, Button, Container, Row, Col } from "react-bootstrap/";
-// import Button from "react-bootstrap/Button";
-// import Gal from "./img/actors/GalGadot.jpg";
+import Gal from "./img/actors/GalGadot.jpg";
 
 export default function ActorCard() {
   return (
@@ -13,7 +12,7 @@ export default function ActorCard() {
           <Card>
             <Card.Header>Gal Gadot</Card.Header>
 
-            <Card.Img variant="top" src={process.env.PUBLIC_URL + "/img/actors/GalGadot.jpg"} />
+            <Card.Img variant="top" src={Gal} />
             <Card.Body>
               <Card.Title>Card Title</Card.Title>
               <Card.Text>
@@ -27,7 +26,7 @@ export default function ActorCard() {
           <Card>
             <Card.Header>Gal Gadot</Card.Header>
 
-            <Card.Img variant="top" src={process.env.PUBLIC_URL + "/img/actors/GalGadot.jpg"} />
+            <Card.Img variant="top" src={Gal} />
             <Card.Body>
               <Card.Title>Card Title</Card.Title>
               <Card.Text>
@@ -41,7 +40,7 @@ export default function ActorCard() {
           <Card>
             <Card.Header>Gal Gadot</Card.Header>
 
-            <Card.Img variant="top" src={process.env.PUBLIC_URL + "/img/actors/GalGadot.jpg"} />
+            <Card.Img variant="top" src={Gal} />
             <Card.Body>
               <Card.Title>Card Title</Card.Title>
               <Card.Text>
@@ -57,7 +56,7 @@ export default function ActorCard() {
           <Card>
             <Card.Header>Gal Gadot</Card.Header>
 
-            <Card.Img variant="top" src={process.env.PUBLIC_URL + "/img/actors/GalGadot.jpg"} />
+            <Card.Img variant="top" src={Gal} />
             <Card.Body>
               <Card.Title>Card Title</Card.Title>
               <Card.Text>
@@ -71,7 +70,7 @@ export default function ActorCard() {
           <Card>
             <Card.Header>Gal Gadot</Card.Header>
 
-            <Card.Img variant="top" src={process.env.PUBLIC_URL + "/img/actors/GalGadot.jpg"} />
+            <Card.Img variant="top" src={Gal} />
             <Card.Body>
               <Card.Title>Card Title</Card.Title>
               <Card.Text>
@@ -85,7 +84,7 @@ export default function ActorCard() {
           <Card>
             <Card.Header>Gal Gadot</Card.Header>
 
-            <Card.Img variant="top" src={process.env.PUBLIC_URL + "/img/actors/GalGadot.jpg"} />
+            <Card.Img variant="top" src={Gal} />
             <Card.Body>
               <Card.Title>Card Title</Card.Title>
               <Card.Text>
