@@ -5,6 +5,9 @@ import { Card, Button, Container, Row, Col } from "react-bootstrap/";
 import Gal from "./img/actors/GalGadot.jpg";
 import Ben from "./img/actors/BenAffleck.jpg";
 import Jennifer from "./img/actors/JenniferConnelly.jpg";
+import Keanu from "./img/actors/KeanuReeves.jpg";
+import Christina from "./img/actors/ChristinaHendricks.jpg";
+import Tom from "./img/actors/TomHanks.jpg";
 
 export default function ActorCard() {
   return (
@@ -18,10 +21,7 @@ export default function ActorCard() {
 
             <Card.Img variant="top" src={Gal} />
             <Card.Body>
-              <Card.Text>
-                Gal Gadot is an Israeli actress, singer, martial artist, and model
-                <p>Born: April 30, 1985 in Rosh Ha'ayin, Israel</p>
-              </Card.Text>
+              <Card.Text>Born: April 30, 1985 in Rosh Ha'ayin, Israel</Card.Text>
             </Card.Body>
           </Card>
         </Col>
@@ -33,26 +33,19 @@ export default function ActorCard() {
 
             <Card.Img variant="top" src={Ben} />
             <Card.Body>
-              <Card.Text>
-                American actor and filmmaker Benjamin Géza Affleck-Boldt
-                <p>Born: August 15, 1972 in Berkeley, California, USA</p>
-              </Card.Text>
+              <Card.Text>Born: August 15, 1972 in Berkeley, California, USA</Card.Text>
             </Card.Body>
           </Card>
         </Col>
         <Col>
           <Card>
             <Card.Header>
-              <Card.Title onClick={() => alert()}>Gal Gadot</Card.Title>
+              <Card.Title onClick={() => alert()}>Jennifer Connelly</Card.Title>
             </Card.Header>
 
             <Card.Img variant="top" src={Jennifer} />
             <Card.Body>
-              <Card.Text>
-                Jennifer Connelly was born in the Catskill Mountains, New York, to Ilene (Schuman), a dealer of
-                antiques, and Gerard Connelly, a clothing manufacturer.
-                <p>Born: December 12, 1970 in Catskill Mountains, New York, USA</p>
-              </Card.Text>
+              <Card.Text>Born: December 12, 1970 in Catskill Mountains, New York, USA</Card.Text>
             </Card.Body>
           </Card>
         </Col>
@@ -60,43 +53,37 @@ export default function ActorCard() {
       <Row>
         <Col>
           <Card>
-            <Card.Header>Gal Gadot</Card.Header>
+            <Card.Header>
+              <Card.Title onClick={() => alert()}>Keanu Reeves</Card.Title>
+            </Card.Header>
 
-            <Card.Img variant="top" src={Gal} />
+            <Card.Img variant="top" src={Keanu} />
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
+              <Card.Text>Born: September 2, 1964 in Beirut, Lebanon</Card.Text>
             </Card.Body>
           </Card>
         </Col>
         <Col>
           <Card>
-            <Card.Header>Gal Gadot</Card.Header>
+            <Card.Header>
+              <Card.Title onClick={() => alert()}>Christina Hendricks</Card.Title>
+            </Card.Header>
 
-            <Card.Img variant="top" src={Gal} />
+            <Card.Img variant="top" src={Christina} />
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
+              <Card.Text>Born: May 3, 1975 in Knoxville, Tennessee, USA</Card.Text>
             </Card.Body>
           </Card>
         </Col>
         <Col>
           <Card>
-            <Card.Header>Gal Gadot</Card.Header>
+            <Card.Header>
+              <Card.Title onClick={() => alert()}>Tom Hanks</Card.Title>
+            </Card.Header>
 
-            <Card.Img variant="top" src={Gal} />
+            <Card.Img variant="top" src={Tom} />
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
+              <Card.Text>Born: July 9, 1956 in Concord, California, USA</Card.Text>
             </Card.Body>
           </Card>
         </Col>
