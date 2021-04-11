@@ -8,6 +8,9 @@ import Jennifer from "./img/actors/JenniferConnelly.jpg";
 import Keanu from "./img/actors/KeanuReeves.jpg";
 import Christina from "./img/actors/ChristinaHendricks.jpg";
 import Tom from "./img/actors/TomHanks.jpg";
+import Johnny from "./img/actors/JohnnyDepp.jpg";
+import Anthony from "./img/actors/AnthonyMackie.jpg";
+import Wallis from "./img/actors/WallisDay.jpg";
 
 export default function ActorCard() {
   return (
@@ -50,6 +53,7 @@ export default function ActorCard() {
           </Card>
         </Col>
       </Row>
+
       <Row>
         <Col>
           <Card>
@@ -84,6 +88,45 @@ export default function ActorCard() {
             <Card.Img variant="top" src={Tom} />
             <Card.Body>
               <Card.Text>Born: July 9, 1956 in Concord, California, USA</Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+
+      <Row>
+        <Col>
+          <Card>
+            <Card.Header>
+              <Card.Title onClick={() => alert()}>Johnny Depp</Card.Title>
+            </Card.Header>
+
+            <Card.Img variant="top" src={Johnny} />
+            <Card.Body>
+              <Card.Text>Born: June 9, 1963 in Owensboro, Kentucky, USA</Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col>
+          <Card>
+            <Card.Header>
+              <Card.Title onClick={() => alert()}>Anthony Mackie</Card.Title>
+            </Card.Header>
+
+            <Card.Img variant="top" src={Anthony} />
+            <Card.Body>
+              <Card.Text>Born: September 23, 1978 in New Orleans, Louisiana, USA</Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col>
+          <Card>
+            <Card.Header>
+              <Card.Title onClick={() => alert()}>Wallis Day</Card.Title>
+            </Card.Header>
+
+            <Card.Img variant="top" src={Wallis} />
+            <Card.Body>
+              <Card.Text>Born: September 20, 1994 in London</Card.Text>
             </Card.Body>
           </Card>
         </Col>
