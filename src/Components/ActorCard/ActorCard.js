@@ -7,7 +7,12 @@ export default function ActorCard({ fname, lname, imgsrc, born, age }) {
   return (
     <Card className="text-center">
       <Card.Header>
-        <Card.Title onClick={() => alert()}>
+        <Card.Title
+          onClick={(e) => {
+            const title = e.target.innerText.split(" ");
+            window.open("https://www.imdb.com/find?q=".concat(`${title[0]}+${title[1]}`), "_blank");
+          }}
+        >
           {fname} {lname} ({age})
         </Card.Title>
       </Card.Header>
