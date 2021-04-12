@@ -1,5 +1,6 @@
 import React from "react";
 import "./ActorCard.css";
+import GalleryNavbar from "./GalleryNavBar/GalleryNavBar";
 
 import {
   Card,
@@ -14,6 +15,7 @@ import {
   FormControl,
   NavDropdown,
 } from "react-bootstrap/";
+
 import Gal from "./img/actors/GalGadot.jpg";
 import Ben from "./img/actors/BenAffleck.jpg";
 import Jennifer from "./img/actors/JenniferConnelly.jpg";
@@ -25,42 +27,9 @@ import Anthony from "./img/actors/AnthonyMackie.jpg";
 import Wallis from "./img/actors/WallisDay.jpg";
 
 export default function ActorCard() {
-  const handleSelect = (eventKey) => alert(`selected ${eventKey}`);
   return (
     <Container>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand href="#home" onClick={() => alert()}>
-          Actors Gallery
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav>
-            <InputGroup>
-              <InputGroup.Prepend>
-                <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-              </InputGroup.Prepend>
-              <FormControl placeholder="Search Pattern" aria-label="Username" aria-describedby="basic-addon1" />
-            </InputGroup>
-          </Nav>
-          <Nav className="mr-auto" activeKey="1" onSelect={handleSelect}>
-            <NavDropdown title="Sort By" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1" eventKey="1">
-                First Name
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2" eventKey="2">
-                Second Name
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3" eventKey="3">
-                Age
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4" eventKey="4">
-                Descending Order
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+      <GalleryNavbar />
       <Row>
         <Col>
           <Card>
