@@ -36,7 +36,7 @@ export default function GalleryNavBar({ onChange, onSelect }) {
             }
           }}
         >
-          <NavDropdown title="Sort By" id="collapsible-nav-dropdown">
+          <NavDropdown title="Sort By" id="collapsible-nav-dropdown" drop="left">
             <NavDropdown.Item eventKey="0" active={activeSelection[0] ? true : false}>
               First Name
             </NavDropdown.Item>
