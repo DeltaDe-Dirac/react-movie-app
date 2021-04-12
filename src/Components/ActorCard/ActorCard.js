@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ActorCard.css";
-import GalleryNavbar from "./GalleryNavBar/GalleryNavBar";
 
 import {
   Card,
@@ -28,8 +27,7 @@ import Wallis from "./img/actors/WallisDay.jpg";
 
 export default function ActorCard() {
   return (
-    <Container>
-      <GalleryNavbar />
+    <>
       <Row>
         <Col>
           <Card>
@@ -146,6 +144,6 @@ export default function ActorCard() {
           </Card>
         </Col>
       </Row>
-    </Container>
+    </>
   );
 }

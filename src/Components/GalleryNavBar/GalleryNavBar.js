@@ -14,7 +14,7 @@ import {
   NavDropdown,
 } from "react-bootstrap/";
 
-export default function GalleryNavBar() {
+export default function GalleryNavBar({ onChange }) {
   const handleSelect = (eventKey) => alert(`selected ${eventKey}`);
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -22,7 +22,7 @@ export default function GalleryNavBar() {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="search">
-          <InputGroup>
+          <InputGroup onChange={(e) => onChange(e.target.value)}>
             <InputGroup.Prepend>
               <InputGroup.Text id="basic-addon1">Filter By:</InputGroup.Text>
             </InputGroup.Prepend>
@@ -35,19 +35,11 @@ export default function GalleryNavBar() {
         </Nav>
         <Nav className="mr-auto" activeKey="1" onSelect={handleSelect}>
           <NavDropdown title="Sort By" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="#" eventKey="1">
-              First Name
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#" eventKey="2">
-              Second Name
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#" eventKey="3">
-              Age
-            </NavDropdown.Item>
+            <NavDropdown.Item eventKey="1">First Name</NavDropdown.Item>
+            <NavDropdown.Item eventKey="2">Second Name</NavDropdown.Item>
+            <NavDropdown.Item eventKey="3">Age</NavDropdown.Item>
             <NavDropdown.Divider />
-            <NavDropdown.Item href="#" eventKey="4">
-              Descending Order
-            </NavDropdown.Item>
+            <NavDropdown.Item eventKey="4">Descending Order</NavDropdown.Item>
           </NavDropdown>
         </Nav>
       </Navbar.Collapse>
