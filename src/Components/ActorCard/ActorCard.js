@@ -30,12 +30,12 @@ export default function ActorCard() {
     <>
       <Row>
         <Col>
-          <Card>
+          <Card className="text-center">
             <Card.Header>
               <Card.Title onClick={() => alert()}>Gal Gadot</Card.Title>
             </Card.Header>
 
-            <Card.Img variant="top" src={Gal} />
+            <Card.Img variant="top" src={process.env.PUBLIC_URL + "/img/actors/GalGadot.jpg"} />
             <Card.Body>
               <Card.Text>Born: April 30, 1985 in Rosh Ha'ayin, Israel</Card.Text>
             </Card.Body>
