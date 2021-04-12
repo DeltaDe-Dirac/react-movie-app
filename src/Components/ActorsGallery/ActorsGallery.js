@@ -112,13 +112,13 @@ export default function ActorsGallery() {
         />
       </Col>
     ));
-  console.log(actorsDataFiltered);
+  // console.log(actorsDataFiltered);
 
   const actorsDataColumns = _.chunk(actorsDataFiltered, rowSize);
-  console.log(actorsDataColumns);
+  // console.log(actorsDataColumns);
 
   const actorsData2Display = actorsDataColumns.map((columns) => <Row key={uuidv4()}>{columns}</Row>);
-  console.log(actorsData2Display);
+  // console.log(actorsData2Display);
 
   return (
     <Container>
