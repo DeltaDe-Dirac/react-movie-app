@@ -5,6 +5,10 @@
   height: 100%;
 }
 
+.card-header {
+  background-color: #5a5e63;
+}
+
 .card-title {
   cursor: pointer;
   margin-bottom: 0;
