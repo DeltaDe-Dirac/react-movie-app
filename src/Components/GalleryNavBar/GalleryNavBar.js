@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./GalleryNavBar.css";
 import { Navbar, Nav, InputGroup, FormControl, NavDropdown } from "react-bootstrap/";
 
-export default function GalleryNavBar({ onChange }) {
-  const handleSelect = (eventKey) => alert(`selected ${eventKey}`);
+export default function GalleryNavBar({ onChange, onSelect }) {
+  const [activeSelection, setSelected] = useState(Array(4).fill(false));
+
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Navbar.Brand>Actors Gallery</Navbar.Brand>
@@ -21,13 +22,38 @@ export default function GalleryNavBar({ onChange }) {
             />
           </InputGroup>
         </Nav>
-        <Nav className="mr-auto" activeKey="1" onSelect={handleSelect}>
-          <NavDropdown title="Sort By" id="collasible-nav-dropdown">
-            <NavDropdown.Item eventKey="1">First Name</NavDropdown.Item>
-            <NavDropdown.Item eventKey="2">Second Name</NavDropdown.Item>
-            <NavDropdown.Item eventKey="3">Age</NavDropdown.Item>
+        <Nav
+          className="mr-auto"
+          // defaultActiveKey="1"
+          onSelect={(eventKey) => {
+            if (parseInt(eventKey) === 4) {
+              setSelected(Array(4).fill(false));
+              onSelect(Array(4).fill(false));
+            } else {
+              activeSelection[eventKey] = !activeSelection[eventKey];
+              setSelected([...activeSelection]);
+              onSelect([...activeSelection]);
+            }
+          }}
+        >
+          <NavDropdown title="Sort By" id="collapsible-nav-dropdown">
+            <NavDropdown.Item eventKey="0" active={activeSelection[0] ? true : false}>
+              First Name
+            </NavDropdown.Item>
+            <NavDropdown.Item eventKey="1" active={activeSelection[1] ? true : false}>
+              Second Name
+            </NavDropdown.Item>
+            <NavDropdown.Item eventKey="2" active={activeSelection[2] ? true : false}>
+              Age
+            </NavDropdown.Item>
             <NavDropdown.Divider />
-            <NavDropdown.Item eventKey="4">Descending Order</NavDropdown.Item>
+            <NavDropdown.Item eventKey="3" active={activeSelection[3] ? true : false}>
+              Descending Order
+            </NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item eventKey="4" active={false}>
+              Clear All
+            </NavDropdown.Item>
           </NavDropdown>
         </Nav>
       </Navbar.Collapse>

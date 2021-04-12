@@ -11,6 +11,13 @@ const actorsData = [
     // age: 36,
   },
   {
+    fname: "Gal",
+    lname: "Gadot",
+    imgsrc: "/img/actors/GalGadot.jpg",
+    born: "Born: July 14, 1981 in Rosh Ha'ayin, Israel",
+    // age: 36,
+  },
+  {
     fname: "Ben",
     lname: "Affleck",
     imgsrc: "/img/actors/BenAffleck.jpg",
@@ -29,6 +36,13 @@ const actorsData = [
     lname: "Reeves",
     imgsrc: "/img/actors/KeanuReeves.jpg",
     born: "Born: September 2, 1964 in Beirut, Lebanon",
+    // age: 57,
+  },
+  {
+    fname: "Keanu",
+    lname: "ZReeves",
+    imgsrc: "/img/actors/KeanuReeves.jpg",
+    born: "Born: September 2, 1965 in Beirut, Lebanon",
     // age: 57,
   },
   {
