@@ -3,10 +3,9 @@
 }
 
 .card {
-  background-color: beige;
+  background-color: #343a40;
+  color: whitesmoke;
   min-width: 260px;
-  /* margin: 20px; */
-  /* padding-bottom: 20px; */
   height: 100%;
 }
 
