@@ -13,18 +13,13 @@ export default function ActorsGallery() {
   const rowSize = 3;
   const pathPre = process.env.PUBLIC_URL;
 
-  const [searchPattern, setSearchPatter] = useState(null);
+  const [searchPattern, setSearchPatter] = useState("");
+  const regexp =
+    searchPattern.length === 0 ? new RegExp(/./g, "ig") : new RegExp(searchPattern.trim().replace(/ /g, "|"), "ig");
   const [sortFields, setSortFields] = useState(Array(4).fill(false));
-
+  // console.log(searchPattern.length);
   const actorsDataFiltered = getActors()
-    .filter(
-      (actor) =>
-        searchPattern === null ||
-        searchPattern.length === 0 ||
-        searchPattern.toLowerCase().includes(actor.fname.toLowerCase()) ||
-        searchPattern.toLowerCase().includes(actor.lname.toLowerCase()) ||
-        searchPattern.includes(actor.age)
-    )
+    .filter((actor) => regexp.test(`${actor.fname} ${actor.lname} ${actor.age}`))
     .sort((actor1, actor2) => sortAny(actor1, actor2))
     .map((actor) => (
       <Col key={uuidv4()}>

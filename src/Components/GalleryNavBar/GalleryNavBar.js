@@ -11,7 +11,7 @@ export default function GalleryNavBar({ onChange, onSelect }) {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="search">
-          <InputGroup onChange={(e) => onChange(e.target.value)}>
+          <InputGroup onChange={(e) => (e.target.value.length > 1 ? onChange(e.target.value) : onChange(""))}>
             <InputGroup.Prepend>
               <InputGroup.Text id="basic-addon1">Filter By:</InputGroup.Text>
             </InputGroup.Prepend>
