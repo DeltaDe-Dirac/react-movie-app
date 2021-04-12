@@ -1,18 +1,6 @@
 import React from "react";
 import "./GalleryNavBar.css";
-import {
-  Card,
-  Button,
-  Container,
-  Row,
-  Col,
-  Navbar,
-  Nav,
-  InputGroup,
-  Form,
-  FormControl,
-  NavDropdown,
-} from "react-bootstrap/";
+import { Navbar, Nav, InputGroup, FormControl, NavDropdown } from "react-bootstrap/";
 
 export default function GalleryNavBar({ onChange }) {
   const handleSelect = (eventKey) => alert(`selected ${eventKey}`);
