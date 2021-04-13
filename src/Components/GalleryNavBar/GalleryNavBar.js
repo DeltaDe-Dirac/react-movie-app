@@ -43,7 +43,7 @@ export default function GalleryNavBar({ onChange, onSelect }) {
               First Name
             </NavDropdown.Item>
             <NavDropdown.Item eventKey="1" active={activeSelection[1] ? true : false}>
-              Second Name
+              Last Name
             </NavDropdown.Item>
             <NavDropdown.Item eventKey="2" active={activeSelection[2] ? true : false}>
               Age
