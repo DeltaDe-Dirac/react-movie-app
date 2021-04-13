@@ -14,12 +14,13 @@ export default function ActorsGallery() {
   const pathPre = process.env.PUBLIC_URL;
 
   const [searchPattern, setSearchPatter] = useState("");
-  const regexp =
-    searchPattern.length === 0 ? new RegExp(/./g, "ig") : new RegExp(searchPattern.trim().replace(/ /g, "|"), "ig");
   const [sortFields, setSortFields] = useState(Array(4).fill(false));
-  // console.log(searchPattern.length);
+
+  const regexp =
+    searchPattern.trim().length < 2 ? new RegExp(/.*/, "i") : new RegExp(searchPattern.trim().replace(/ /g, "|"), "i");
+
   const actorsDataFiltered = getActors()
-    .filter((actor) => regexp.test(`${actor.fname} ${actor.lname} ${actor.age}`))
+    .filter((actor) => regexp.test(actor.fname) || regexp.test(actor.lname) || regexp.test(actor.age))
     .sort((actor1, actor2) => sortAny(actor1, actor2))
     .map((actor) => (
       <Col key={uuidv4()}>
@@ -37,17 +38,15 @@ export default function ActorsGallery() {
   const actorsData2Display = _.chunk(actorsDataFiltered, rowSize).map((columns) => <Row key={uuidv4()}>{columns}</Row>);
 
   function sortAny(actor1, actor2) {
-    let isSortByFName = sortFields[0];
-    let isSortBySName = sortFields[1];
-    let isSortByAge = sortFields[2];
-    let sortOrder = sortFields[3] ? -1 : 1;
+    let [isSortByFName, isSortByLName, isSortByAge, sortOrder] = sortFields;
+    sortOrder = sortOrder ? -1 : 1;
     let sortResult = 0;
 
     if (isSortByFName) {
       sortResult = sortStrings(actor1.fname, actor2.fname);
     }
 
-    if (isSortBySName && sortResult === 0) {
+    if (isSortByLName && sortResult === 0) {
       sortResult = sortStrings(actor1.lname, actor2.lname);
     }
 
