@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/react-movie-app/static/css/main.9634221c.chunk.css",
-    "main.js": "/react-movie-app/static/js/main.be9462f1.chunk.js",
-    "main.js.map": "/react-movie-app/static/js/main.be9462f1.chunk.js.map",
-    "runtime-main.js": "/react-movie-app/static/js/runtime-main.a7db8172.js",
-    "runtime-main.js.map": "/react-movie-app/static/js/runtime-main.a7db8172.js.map",
+    "main.js": "/react-movie-app/static/js/main.5c040536.chunk.js",
+    "main.js.map": "/react-movie-app/static/js/main.5c040536.chunk.js.map",
+    "runtime-main.js": "/react-movie-app/static/js/runtime-main.7a9c0e6a.js",
+    "runtime-main.js.map": "/react-movie-app/static/js/runtime-main.7a9c0e6a.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/react-movie-app/static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.4c61225e.chunk.js": "/react-movie-app/static/js/2.4c61225e.chunk.js",
-    "static/js/2.4c61225e.chunk.js.map": "/react-movie-app/static/js/2.4c61225e.chunk.js.map",
-    "static/js/3.bd891424.chunk.js": "/react-movie-app/static/js/3.bd891424.chunk.js",
-    "static/js/3.bd891424.chunk.js.map": "/react-movie-app/static/js/3.bd891424.chunk.js.map",
+    "static/js/2.30ed7703.chunk.js": "/react-movie-app/static/js/2.30ed7703.chunk.js",
+    "static/js/2.30ed7703.chunk.js.map": "/react-movie-app/static/js/2.30ed7703.chunk.js.map",
+    "static/js/3.0f313aaa.chunk.js": "/react-movie-app/static/js/3.0f313aaa.chunk.js",
+    "static/js/3.0f313aaa.chunk.js.map": "/react-movie-app/static/js/3.0f313aaa.chunk.js.map",
     "index.html": "/react-movie-app/index.html",
     "static/css/2.4c97ca4f.chunk.css.map": "/react-movie-app/static/css/2.4c97ca4f.chunk.css.map",
     "static/css/main.9634221c.chunk.css.map": "/react-movie-app/static/css/main.9634221c.chunk.css.map",
-    "static/js/2.4c61225e.chunk.js.LICENSE.txt": "/react-movie-app/static/js/2.4c61225e.chunk.js.LICENSE.txt"
+    "static/js/2.30ed7703.chunk.js.LICENSE.txt": "/react-movie-app/static/js/2.30ed7703.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.a7db8172.js",
+    "static/js/runtime-main.7a9c0e6a.js",
     "static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.4c61225e.chunk.js",
+    "static/js/2.30ed7703.chunk.js",
     "static/css/main.9634221c.chunk.css",
-    "static/js/main.be9462f1.chunk.js"
+    "static/js/main.5c040536.chunk.js"
   ]
 }
