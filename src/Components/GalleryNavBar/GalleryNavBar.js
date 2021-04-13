@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import "./GalleryNavBar.css";
 import { Navbar, Nav, InputGroup, FormControl, NavDropdown } from "react-bootstrap/";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function GalleryNavBar({ onChange, onSelect }) {
   const [activeSelection, setSelected] = useState(Array(4).fill(false));
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar.Brand>
+        <FontAwesomeIcon className="fa-icon" icon="film" />
+      </Navbar.Brand>
       <Navbar.Brand>Actors Gallery</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
