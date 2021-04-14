@@ -5,3 +5,8 @@
 .fa-icon {
   font-size: 1.5em;
 }
+
+.navDivider {
+  width: 10px;
+  height: 10px;
+}

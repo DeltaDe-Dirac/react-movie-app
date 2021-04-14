@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import "./GalleryNavBar.css";
-import { Navbar, Nav, InputGroup, FormControl, NavDropdown } from "react-bootstrap/";
+import { Navbar, Nav, InputGroup, FormControl } from "react-bootstrap/";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import DropDownMultiSelect from "../MultiSelectDropDown/DropdownMultiselect";
 
 export default function GalleryNavBar({ onChange, onSelect }) {
-  const [activeSelection, setSelected] = useState(Array(4).fill(false));
+  function handleSortCritera(criteria) {
+    const selection = Array(4).fill(false);
+    criteria.forEach((criterion) => (selection[criterion] = true));
+    onSelect(selection);
+  }
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -28,39 +33,9 @@ export default function GalleryNavBar({ onChange, onSelect }) {
             />
           </InputGroup>
         </Nav>
-        <Nav
-          className="mr-auto"
-          // defaultActiveKey="1"
-          onSelect={(eventKey) => {
-            if (parseInt(eventKey) === 4) {
-              setSelected(Array(4).fill(false));
-              onSelect(Array(4).fill(false));
-            } else {
-              activeSelection[eventKey] = !activeSelection[eventKey];
-              setSelected([...activeSelection]);
-              onSelect(activeSelection);
-            }
-          }}
-        >
-          <NavDropdown title="Sort By" id="collapsible-nav-dropdown" drop="left">
-            <NavDropdown.Item eventKey="0" active={activeSelection[0] ? true : false}>
-              First Name
-            </NavDropdown.Item>
-            <NavDropdown.Item eventKey="1" active={activeSelection[1] ? true : false}>
-              Last Name
-            </NavDropdown.Item>
-            <NavDropdown.Item eventKey="2" active={activeSelection[2] ? true : false}>
-              Age
-            </NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item eventKey="3" active={activeSelection[3] ? true : false}>
-              Descending Order
-            </NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item eventKey="4" active={false}>
-              Clear All
-            </NavDropdown.Item>
-          </NavDropdown>
+        <Nav className="navDivider"></Nav>
+        <Nav>
+          <DropDownMultiSelect handleChange={handleSortCritera} />
         </Nav>
       </Navbar.Collapse>
     </Navbar>
