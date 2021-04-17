@@ -21,6 +21,7 @@ export default function GalleryNavBar({ onChange, onSelect }) {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="search">
           <InputGroup
+            data-testid="navInput"
             onChange={(e) => (e.target.value.trim().length > 1 ? onChange(e.target.value.trim()) : onChange(""))}
           >
             <InputGroup.Prepend>

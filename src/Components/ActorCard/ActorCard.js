@@ -8,6 +8,7 @@ export default function ActorCard({ fname, lname, imgsrc, born, age }) {
     <Card className="text-center">
       <Card.Header>
         <Card.Title
+          data-testid="cardTitle"
           onClick={(e) => {
             const title = e.target.innerText.split(" ");
             window.open("https://www.imdb.com/find?q=".concat(`${title[0]}+${title[1]}`), "_blank");
