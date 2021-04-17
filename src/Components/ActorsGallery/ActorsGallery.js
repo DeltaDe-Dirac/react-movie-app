@@ -7,19 +7,15 @@ import { Container, Row, Col } from "react-bootstrap/";
 
 import GalleryNavbar from "../GalleryNavBar/GalleryNavBar";
 import ActorCard from "../ActorCard/ActorCard";
-import { getActors } from "../ActorsGallery/ActorsGalleryData";
 
-export default function ActorsGallery() {
-  const rowSize = 3;
-  const pathPre = process.env.PUBLIC_URL;
-
+export default function ActorsGallery({ actors, pathPre, rowSize }) {
   const [searchPattern, setSearchPatter] = useState("");
   const [sortFields, setSortFields] = useState(Array(4).fill(false));
 
   const regexp =
     searchPattern.trim().length < 2 ? new RegExp(/.*/, "i") : new RegExp(searchPattern.trim().replace(/ /g, "|"), "i");
 
-  const actorsDataFiltered = getActors()
+  const actorsDataFiltered = actors
     .filter((actor) => regexp.test(actor.fname) || regexp.test(actor.lname) || regexp.test(actor.age))
     .sort((actor1, actor2) => sortAny(actor1, actor2))
     .map((actor) => (
@@ -70,7 +66,7 @@ export default function ActorsGallery() {
   return (
     <Container>
       <GalleryNavbar onChange={setSearchPatter} onSelect={setSortFields} />
-      {actorsData2Display}
+      <div data-testid="actorsGrid">{actorsData2Display}</div>
     </Container>
   );
 }
