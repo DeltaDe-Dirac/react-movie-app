@@ -34,7 +34,7 @@ test("renders navbar input for filtering", () => {
     render(<App />, container);
   });
 
-  const navInput = document.querySelector("[data-testid=navInput]");
+  const navInput = document.querySelector("[class=form-control]");
   expect(navInput).toBeInTheDocument();
 });
 
@@ -52,8 +52,8 @@ test("renders cards with title", () => {
     render(<App />, container);
   });
 
-  const navInput = document.querySelectorAll("[data-testid=cardTitle]");
-  expect(navInput.length).toBe(11);
+  const cardTitle = document.querySelectorAll("[data-testid=cardTitle]");
+  expect(cardTitle.length).toBe(11);
 });
 
 test("renders first card title with specific text", () => {
