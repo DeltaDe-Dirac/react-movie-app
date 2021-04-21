@@ -1,4 +1,4 @@
-import ActorClass from "../ActorCard/ActorClass";
+import ActorClass from "../../model/ActorClass";
 
 const getActors = () => actorsData.map((actor) => new ActorClass(actor.fname, actor.lname, actor.born, actor.imgsrc));
 

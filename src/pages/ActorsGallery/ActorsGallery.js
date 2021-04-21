@@ -6,11 +6,11 @@ import axios from "axios";
 
 import { Container, Row, Col } from "react-bootstrap/";
 
-import GalleryNavbar from "../GalleryNavBar/GalleryNavBar";
-import ActorCard from "../ActorCard/ActorCard";
-import ActorClass from "../ActorCard/ActorClass";
+import GalleryNavbar from "../../Components/GalleryNavBar/GalleryNavBar";
+import ActorCard from "../../Components/ActorCard/ActorCard";
+import ActorClass from "../../model/ActorClass";
 
-export default function ActorsGallery({ actors, pathPre, rowSize }) {
+export default function ActorsGallery({ pathPre, rowSize }) {
   const [searchPattern, setSearchPatter] = useState("");
   const [sortFields, setSortFields] = useState(Array(4).fill(false));
   const [actorsData2Display, setActorsData2Display] = useState(null);

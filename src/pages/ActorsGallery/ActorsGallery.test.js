@@ -3,7 +3,7 @@ import { act } from "react-dom/test-utils";
 import userEvent from "@testing-library/user-event";
 
 import ActorsGallery from "./ActorsGallery";
-import ActorClass from "../ActorCard/ActorClass";
+import ActorClass from "../../model/ActorClass";
 
 import { faFilm } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
