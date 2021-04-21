@@ -14,7 +14,7 @@ function App() {
   const rowSize = 3;
   const pathPre = process.env.PUBLIC_URL;
 
-  return <ActorsGallery actors={pathPre.concat("/data/actors.json")} pathPre={pathPre} rowSize={rowSize} />;
+  return <ActorsGallery dataPath={pathPre.concat("/data/actors.json")} pathPre={pathPre} rowSize={rowSize} />;
 }
 
 export default App;
