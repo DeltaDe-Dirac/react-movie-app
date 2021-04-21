@@ -10,7 +10,7 @@ import GalleryNavbar from "../../Components/GalleryNavBar/GalleryNavBar";
 import ActorCard from "../../Components/ActorCard/ActorCard";
 import ActorClass from "../../model/ActorClass";
 
-export default function ActorsGallery({ pathPre, rowSize }) {
+export default function ActorsGallery({ actors, pathPre, rowSize }) {
   const [searchPattern, setSearchPatter] = useState("");
   const [sortFields, setSortFields] = useState(Array(4).fill(false));
   const [actorsData2Display, setActorsData2Display] = useState(null);
@@ -22,7 +22,7 @@ export default function ActorsGallery({ pathPre, rowSize }) {
         : new RegExp(searchPattern.trim().replace(/ /g, "|"), "i");
 
     axios
-      .get(pathPre.concat("/data/actors.json"))
+      .get(actors)
       .then((response) => {
         const actorsDataFiltered = response.data
           .map((actor) => new ActorClass(actor.fname, actor.lname, actor.born, actor.imgsrc))
@@ -77,7 +77,7 @@ export default function ActorsGallery({ pathPre, rowSize }) {
 
       return 0;
     }
-  }, [searchPattern, sortFields, pathPre, rowSize]);
+  }, [searchPattern, sortFields, actors, pathPre, rowSize]);
 
   return (
     <Container>
