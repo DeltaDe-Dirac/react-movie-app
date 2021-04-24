@@ -5,7 +5,7 @@ import { Card } from "react-bootstrap/";
 
 export default function ActorCard({ fname, lname, imgsrc, born, age }) {
   return (
-    <Card className="text-center">
+    <Card className="actorCard text-center">
       <Card.Header>
         <Card.Title
           data-testid="cardTitle"

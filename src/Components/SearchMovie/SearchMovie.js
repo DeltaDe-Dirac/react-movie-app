@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MovieModel from "../../model/MovieModel";
 import axios from "axios";
 
-export default function SearchMovie({ purposeText }) {
+export default function SearchMovie({ movieCards, addMovieCard }) {
   const [searchPattern, setSearchPatter] = useState("");
   const [foundMovies, setFoundMovies] = useState(null);
 
@@ -19,7 +19,7 @@ export default function SearchMovie({ purposeText }) {
         //   "https://api.themoviedb.org/3/search/movie?api_key=da05aa3114b146b2dd9303dad161c614&query=" + searchPattern,
         baseURL: "https://api.themoviedb.org/3/search/movie?language=en-US&query=" + searchPattern,
 
-        timeout: 1000,
+        timeout: 2000,
         headers: {
           "Content-Type": "application/json;charset=utf-8",
           Authorization:
@@ -50,9 +50,17 @@ export default function SearchMovie({ purposeText }) {
   }, [searchPattern]);
 
   function handleLinkClick(selectedKey) {
-    setFoundMovies([...foundMovies.filter((movie) => movie.id != selectedKey)]);
+    setFoundMovies([
+      ...foundMovies.filter((movie) => {
+        if (movie.id !== parseInt(selectedKey)) {
+          return true;
+        } else {
+          addMovieCard(movie);
+          return false;
+        }
+      }),
+    ]);
     setSearchPatter("");
-    // console.log(e);
   }
 
   return (
@@ -67,7 +75,7 @@ export default function SearchMovie({ purposeText }) {
           <Nav className="search">
             <InputGroup>
               <InputGroup.Prepend>
-                <InputGroup.Text>{purposeText}</InputGroup.Text>
+                <InputGroup.Text>Seach Movies</InputGroup.Text>
               </InputGroup.Prepend>
               <FormControl
                 value={searchPattern}
