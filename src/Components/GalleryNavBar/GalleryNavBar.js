@@ -12,7 +12,7 @@ export default function GalleryNavBar({ onChange, onSelect }) {
   }
 
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="actorsNavbar">
       <Navbar.Brand>
         <FontAwesomeIcon className="fa-icon" icon="film" />
       </Navbar.Brand>
@@ -20,15 +20,14 @@ export default function GalleryNavBar({ onChange, onSelect }) {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="search">
-          <InputGroup
-            onChange={(e) => (e.target.value.trim().length > 1 ? onChange(e.target.value.trim()) : onChange(""))}
-          >
+          <InputGroup>
             <InputGroup.Prepend>
               <InputGroup.Text id="basic-addon1">Filter By:</InputGroup.Text>
             </InputGroup.Prepend>
             <FormControl
+              onChange={(e) => (e.target.value.trim().length > 1 ? onChange(e.target.value.trim()) : onChange(""))}
               placeholder="First Name, Second Name or Age"
-              aria-label="Username"
+              aria-label="Search by First Name, Second Name or Age"
               aria-describedby="basic-addon1"
             />
           </InputGroup>

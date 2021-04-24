@@ -2,6 +2,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import ActorsGallery from "./pages/ActorsGallery/ActorsGallery";
+import MoviesGallery from "./pages/MoviesGallery/MoviesGallery";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
@@ -14,7 +15,12 @@ function App() {
   const rowSize = 3;
   const pathPre = process.env.PUBLIC_URL;
 
-  return <ActorsGallery dataPath={pathPre.concat("/data/actors.json")} pathPre={pathPre} rowSize={rowSize} />;
+  return (
+    <>
+      <MoviesGallery />
+      <ActorsGallery dataPath={pathPre.concat("/data/actors.json")} pathPre={pathPre} rowSize={rowSize} />
+    </>
+  );
 }
 
 export default App;

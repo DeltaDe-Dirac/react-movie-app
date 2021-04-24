@@ -1,0 +1,15 @@
+.moviesNavbar > .navbar .search {
+  flex-grow: 1;
+}
+
+.moviesNavbar .fa-icon {
+  font-size: 1.5em;
+}
+
+.moviesNavbar .result-box {
+  min-width: 300px;
+  position: absolute;
+  left: 30%;
+  width: 50%;
+  z-index: 10;
+}

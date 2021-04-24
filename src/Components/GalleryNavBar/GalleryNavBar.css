@@ -1,12 +1,12 @@
-.search {
+.actorsNavbar .search {
   flex-grow: 2;
 }
 
-.fa-icon {
+.actorsNavbar .fa-icon {
   font-size: 1.5em;
 }
 
-.navDivider {
+.actorsNavbar .navDivider {
   width: 10px;
   height: 10px;
 }
