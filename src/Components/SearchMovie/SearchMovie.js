@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MovieModel from "../../model/MovieModel";
 import axios from "axios";
 
-export default function SearchMovie({ movieCards, addMovieCard }) {
+export default function SearchMovie({ addMovieCard }) {
   const [searchPattern, setSearchPatter] = useState("");
   const [foundMovies, setFoundMovies] = useState(null);
   const [redirectTo, setRedirectTo] = useState(null);

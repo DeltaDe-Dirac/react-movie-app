@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./MoviesGallery.css";
 import axios from "axios";
 import { Container, Row, Col } from "react-bootstrap/";
@@ -7,6 +7,13 @@ import MovieCard from "../../Components/MovieCard/MovieCard";
 
 export default function MoviesGallery() {
   const [moviesToDisplay, setMoviesToDisplay] = useState([]);
+
+  useEffect(() => {
+    const movies = JSON.parse(localStorage.getItem("movies"));
+    if (movies) {
+      setMoviesToDisplay(movies);
+    }
+  }, []);
 
   function addMovieCard(movieToAdd) {
     const movieInstance = axios.create({
@@ -36,10 +43,13 @@ export default function MoviesGallery() {
           .then((response) => {
             movieToAdd.director_name = response.data.crew;
             movieToAdd.casting = response.data.cast;
+            const moviesToStoreInStorage = moviesToDisplay
+              .filter((existingMovie) => existingMovie.id !== movieToAdd.id)
+              .concat(movieToAdd);
 
-            setMoviesToDisplay(
-              moviesToDisplay.filter((existingMovie) => existingMovie.id !== movieToAdd.id).concat(movieToAdd)
-            );
+            setMoviesToDisplay(moviesToStoreInStorage);
+
+            localStorage.setItem("movies", JSON.stringify(moviesToStoreInStorage));
           })
           .catch((err) => {
             console.error("/movie/credits ", err);
