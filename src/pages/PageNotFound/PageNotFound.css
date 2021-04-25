@@ -16,3 +16,7 @@
   padding-top: 50px;
   font-size: 10em;
 }
+
+.pagenotfound-img .nav-link:hover {
+  color: aquamarine;
+}

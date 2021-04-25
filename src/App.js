@@ -11,8 +11,6 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import { faCheckSquare, faCoffee, faFilm } from "@fortawesome/free-solid-svg-icons";
 import { HashRouter, Route, Switch } from "react-router-dom";
 
-// import { getActors } from "./pages/ActorsGallery/ActorsGalleryData";
-
 library.add(fab, faCheckSquare, faCoffee, faFilm);
 
 function App() {

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Redirect } from "react-router";
 import "./SearchMovie.css";
 
 import { InputGroup, FormControl, Navbar, Nav } from "react-bootstrap/";
@@ -9,6 +10,7 @@ import axios from "axios";
 export default function SearchMovie({ movieCards, addMovieCard }) {
   const [searchPattern, setSearchPatter] = useState("");
   const [foundMovies, setFoundMovies] = useState(null);
+  const [redirectTo, setRedirectTo] = useState(null);
 
   useEffect(() => {
     if (searchPattern) {
@@ -55,6 +57,10 @@ export default function SearchMovie({ movieCards, addMovieCard }) {
     setSearchPatter("");
   }
 
+  if (redirectTo !== null) {
+    return <Redirect to={redirectTo}></Redirect>;
+  }
+
   return (
     <div className="moviesNavbar">
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -64,6 +70,10 @@ export default function SearchMovie({ movieCards, addMovieCard }) {
         <Navbar.Brand>Movies Gallery</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav" className="searchNav">
+          <Navbar bg="dark" variant="dark" onSelect={(selectedKey) => setRedirectTo(selectedKey)}>
+            <Nav.Link eventKey="/">Home</Nav.Link>
+            <Nav.Link eventKey="/actors">Actors</Nav.Link>
+          </Navbar>
           <Nav className="search">
             <InputGroup>
               <InputGroup.Prepend>

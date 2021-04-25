@@ -7,14 +7,7 @@ export default function MovieCard({ movie }) {
   return (
     <Card className="movieCard">
       <Card.Header>
-        <Card.Title
-          className="text-center"
-          data-testid="movieTitle"
-          //   onClick={(e) => {
-          //     const title = e.target.innerText.split(" ");
-          //     window.open("https://www.imdb.com/find?q=".concat(`${title[0]}+${title[1]}`), "_blank");
-          //   }}
-        >
+        <Card.Title className="text-center" data-testid="movieTitle">
           {movie.title} ({movie.year})
         </Card.Title>
       </Card.Header>

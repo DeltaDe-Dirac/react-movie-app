@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+import { Redirect } from "react-router";
 import "./GalleryNavBar.css";
+
 import { Navbar, Nav, InputGroup, FormControl } from "react-bootstrap/";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DropDownMultiSelect from "../MultiSelectDropDown/DropdownMultiselect";
 
 export default function GalleryNavBar({ onChange, onSelect }) {
+  const [redirectTo, setRedirectTo] = useState(null);
+
   function handleSortCritera(criteria) {
     const selection = Array(4).fill(false);
     criteria.forEach((criterion) => (selection[criterion] = true));
     onSelect(selection);
+  }
+
+  if (redirectTo !== null) {
+    return <Redirect to={redirectTo}></Redirect>;
   }
 
   return (
@@ -19,6 +27,10 @@ export default function GalleryNavBar({ onChange, onSelect }) {
       <Navbar.Brand>Actors Gallery</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
+        <Navbar bg="dark" variant="dark" onSelect={(selectedKey) => setRedirectTo(selectedKey)}>
+          <Nav.Link eventKey="/">Home</Nav.Link>
+          <Nav.Link eventKey="/movies">Movies</Nav.Link>
+        </Navbar>
         <Nav className="search">
           <InputGroup>
             <InputGroup.Prepend>
