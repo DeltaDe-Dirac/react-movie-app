@@ -9,16 +9,24 @@
   height: 100vh;
   margin: 0;
   text-align: center;
-  font-family: "Sacramento", cursive;
 }
 
 .homepage-img h1 {
+  font-family: "Sacramento", cursive;
   color: whitesmoke;
-  padding-top: 100px;
+  padding-top: 50px;
   font-size: 10em;
 }
 
 .homepage-img p {
+  font-family: "Trebuchet MS", Arial, sans-serif;
   font-size: 3em;
   color: aqua;
+}
+
+.homepage-img a {
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-size: 2em;
+  color: aquamarine;
+  margin: 20px;
 }
