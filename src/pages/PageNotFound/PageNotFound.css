@@ -17,6 +17,10 @@
   font-size: 10em;
 }
 
+.pagenotfound-img .nav-link {
+  display: inline-block;
+}
+
 .pagenotfound-img .nav-link:hover {
   color: aquamarine;
 }
