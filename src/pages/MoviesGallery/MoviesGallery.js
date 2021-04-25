@@ -10,37 +10,48 @@ export default function MoviesGallery() {
   const [moviesToDisplay, setMoviesToDisplay] = useState([]);
 
   function addMovieCard(movieToAdd) {
-    const instance = axios.create({
+    const movieInstance = axios.create({
       baseURL: `https://api.themoviedb.org/3/movie/${movieToAdd.id}?api_key=da05aa3114b146b2dd9303dad161c614&language=en-US`,
-      //   baseURL: "https://api.themoviedb.org/3/configuration",
-      //   http://image.tmdb.org/t/p/
-      //   https://image.tmdb.org/t/p/
-
       timeout: 2000,
       headers: {
         "Content-Type": "application/json;charset=utf-8",
       },
     });
 
-    instance
+    movieInstance
       .get()
       .then((response) => {
         movieToAdd.poster_path = response.data.poster_path;
         movieToAdd.runtime = response.data.runtime;
 
-        setMoviesToDisplay(
-          moviesToDisplay.filter((existingMovie) => existingMovie.id !== movieToAdd.id).concat(movieToAdd)
-        );
+        const creditInstance = axios.create({
+          baseURL: `https://api.themoviedb.org/3/movie/${movieToAdd.id}/credits?api_key=da05aa3114b146b2dd9303dad161c614&language=en-US`,
+          timeout: 2000,
+          headers: {
+            "Content-Type": "application/json;charset=utf-8",
+          },
+        });
+
+        creditInstance
+          .get()
+          .then((response) => {
+            // movieToAdd.poster_path = response.data.poster_path;
+            // movieToAdd.runtime = response.data.runtime;
+            movieToAdd.director_name = response.data.crew;
+            console.log(response.data);
+
+            setMoviesToDisplay(
+              moviesToDisplay.filter((existingMovie) => existingMovie.id !== movieToAdd.id).concat(movieToAdd)
+            );
+          })
+          .catch((err) => {
+            console.error("/movie/credits ", err);
+          });
       })
       .catch((err) => {
-        console.log(err);
+        console.error("/movie ", err);
       });
-
-    // console.log(movieToAdd);
   }
-
-  //   FIX IMAGE SYNC
-  useEffect(() => {}, [moviesToDisplay]);
 
   return (
     <Container>

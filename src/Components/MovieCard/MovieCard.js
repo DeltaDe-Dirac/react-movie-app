@@ -21,8 +21,8 @@ export default function MovieCard({ movie }) {
       <Card.Img variant="top" src={movie.imgsrc} alt={`${movie.title}`} />
 
       <Card.Body>
-        <Card.Text>{movie.duration} (min)</Card.Text>
-        <Card.Text>Director</Card.Text>
+        <Card.Text>Duration [min]: {movie.duration}</Card.Text>
+        <Card.Text>Director: {movie.director}</Card.Text>
         <Card.Text>Stars</Card.Text>
         <Card.Text>{movie.overview}</Card.Text>
       </Card.Body>

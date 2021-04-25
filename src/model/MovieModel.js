@@ -5,8 +5,6 @@ export default class MovieModel {
     this.release_date = new Date(movie["release_date"]);
     this.overview = movie["overview"];
     this.original_language = movie["original_language"];
-    // this.poster_path = "";
-    // this.runtime = 0;
   }
 
   get lang() {
@@ -33,5 +31,17 @@ export default class MovieModel {
    */
   set runtime(duration) {
     this.duration = duration;
+  }
+
+  /**
+   * @param {any} crew
+   */
+  set director_name(crew) {
+    for (let crew_member of crew) {
+      if (crew_member["job"] === "Director") {
+        this.director = crew_member["name"];
+        break;
+      }
+    }
   }
 }
