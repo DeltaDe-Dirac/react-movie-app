@@ -3,10 +3,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import ActorsGallery from "./pages/ActorsGallery/ActorsGallery";
 import MoviesGallery from "./pages/MoviesGallery/MoviesGallery";
+import HomePage from "./pages/HomePage/HomePage";
+import PageNotFound from "./pages/PageNotFound/PageNotFound";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { faCheckSquare, faCoffee, faFilm } from "@fortawesome/free-solid-svg-icons";
+import { HashRouter, Route, Switch } from "react-router-dom";
+
 // import { getActors } from "./pages/ActorsGallery/ActorsGalleryData";
 
 library.add(fab, faCheckSquare, faCoffee, faFilm);
@@ -16,10 +20,22 @@ function App() {
   const pathPre = process.env.PUBLIC_URL;
 
   return (
-    <>
-      <MoviesGallery />
-      <ActorsGallery dataPath={pathPre.concat("/data/actors.json")} pathPre={pathPre} rowSize={rowSize} />
-    </>
+    <HashRouter>
+      <Switch>
+        <Route exact path="/">
+          <HomePage />
+        </Route>
+        <Route exact path="/movies">
+          <MoviesGallery />
+        </Route>
+        <Route exact path="/actors">
+          <ActorsGallery dataPath={pathPre.concat("/data/actors.json")} pathPre={pathPre} rowSize={rowSize} />
+        </Route>
+        <Route path="/">
+          <PageNotFound />
+        </Route>
+      </Switch>
+    </HashRouter>
   );
 }
 
