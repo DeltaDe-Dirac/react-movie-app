@@ -1,0 +1,14 @@
+.homepage-img {
+  background-image: url("pexels-travis-blessing.jpg");
+  background-color: #cccccc;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+  margin: 0;
+  color: whitesmoke;
+  text-align: center;
+  font-family: "Sacramento", cursive;
+}

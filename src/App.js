@@ -23,7 +23,7 @@ function App() {
     <HashRouter>
       <Switch>
         <Route exact path="/">
-          <HomePage />
+          <HomePage pathPre={pathPre} />
         </Route>
         <Route exact path="/movies">
           <MoviesGallery />
