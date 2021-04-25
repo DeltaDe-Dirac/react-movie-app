@@ -27,16 +27,16 @@ export default function MoviesGallery() {
       .then((response) => {
         movieToAdd.poster_path = response.data.poster_path;
         movieToAdd.runtime = response.data.runtime;
-        console.log(response.data, "|", movieToAdd.imgsrc, "|", movieToAdd.duration, "|", response.data.runtime);
+
+        setMoviesToDisplay(
+          moviesToDisplay.filter((existingMovie) => existingMovie.id !== movieToAdd.id).concat(movieToAdd)
+        );
       })
       .catch((err) => {
         console.log(err);
       });
 
-    console.log(movieToAdd);
-    setMoviesToDisplay(
-      moviesToDisplay.filter((existingMovie) => existingMovie.id !== movieToAdd.id).concat(movieToAdd)
-    );
+    // console.log(movieToAdd);
   }
 
   //   FIX IMAGE SYNC
