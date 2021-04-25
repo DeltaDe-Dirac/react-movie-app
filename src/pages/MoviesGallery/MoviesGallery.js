@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./MoviesGallery.css";
 import axios from "axios";
 import { Container, Row, Col } from "react-bootstrap/";
 import SearchMovie from "../../Components/SearchMovie/SearchMovie";
 import MovieCard from "../../Components/MovieCard/MovieCard";
-import MovieModel from "../../model/MovieModel";
 
 export default function MoviesGallery() {
   const [moviesToDisplay, setMoviesToDisplay] = useState([]);
@@ -35,10 +34,8 @@ export default function MoviesGallery() {
         creditInstance
           .get()
           .then((response) => {
-            // movieToAdd.poster_path = response.data.poster_path;
-            // movieToAdd.runtime = response.data.runtime;
             movieToAdd.director_name = response.data.crew;
-            console.log(response.data);
+            movieToAdd.casting = response.data.cast;
 
             setMoviesToDisplay(
               moviesToDisplay.filter((existingMovie) => existingMovie.id !== movieToAdd.id).concat(movieToAdd)
@@ -59,7 +56,7 @@ export default function MoviesGallery() {
       <div data-testid="moviesGrid">
         <Row>
           {moviesToDisplay.map((movie) => (
-            <Col lg={3} md={6} key={movie.id}>
+            <Col lg={4} md={6} key={movie.id}>
               <MovieCard movie={movie} />
             </Col>
           ))}

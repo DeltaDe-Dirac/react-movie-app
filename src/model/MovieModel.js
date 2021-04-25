@@ -44,4 +44,16 @@ export default class MovieModel {
       }
     }
   }
+
+  /**
+   * @param {any[]} cast
+   */
+  set casting(cast) {
+    this.actors = cast
+      .filter((actor) => actor.known_for_department === "Acting")
+      .sort((actor1, actor2) => actor2.popularity - actor1.popularity)
+      .map((actor) => actor.name);
+
+    this.actors = this.actors.length > 5 ? this.actors.slice(0, 5) : this.actors;
+  }
 }

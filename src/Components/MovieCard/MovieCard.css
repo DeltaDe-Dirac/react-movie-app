@@ -1,7 +1,6 @@
 .movieCard {
   background-color: #343a40;
   color: whitesmoke;
-  min-width: 260px;
   height: 100%;
 }
 
@@ -12,10 +11,4 @@
 .movieCard .card-title {
   cursor: pointer;
   margin-bottom: 0;
-}
-
-.movieCard > .card-img-top {
-  /* width: 50%;
-  margin: auto;
-  padding: 20px 0; */
 }

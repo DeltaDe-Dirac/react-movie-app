@@ -11,12 +11,8 @@ export default function SearchMovie({ movieCards, addMovieCard }) {
   const [foundMovies, setFoundMovies] = useState(null);
 
   useEffect(() => {
-    // console.log(searchPattern);
     if (searchPattern) {
       const instance = axios.create({
-        // baseURL: "https://api.themoviedb.org/3/movie/550?api_key=da05aa3114b146b2dd9303dad161c614",
-        // baseURL:
-        //   "https://api.themoviedb.org/3/search/movie?api_key=da05aa3114b146b2dd9303dad161c614&query=" + searchPattern,
         baseURL: "https://api.themoviedb.org/3/search/movie?language=en-US&query=" + searchPattern,
 
         timeout: 2000,
@@ -42,11 +38,9 @@ export default function SearchMovie({ movieCards, addMovieCard }) {
           console.log(err);
           setFoundMovies(null);
         });
-      // console.log(searchResult);
     } else {
       setFoundMovies(null);
     }
-    // console.log(searchPattern);
   }, [searchPattern]);
 
   function handleLinkClick(selectedKey) {
