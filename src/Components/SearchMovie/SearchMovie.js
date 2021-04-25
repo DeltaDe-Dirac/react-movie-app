@@ -13,15 +13,13 @@ export default function SearchMovie({ movieCards, addMovieCard }) {
   useEffect(() => {
     if (searchPattern) {
       const instance = axios.create({
-        baseURL: "https://api.themoviedb.org/3/search/movie?language=en-US&query=" + searchPattern,
+        baseURL:
+          "https://api.themoviedb.org/3/search/movie?api_key=da05aa3114b146b2dd9303dad161c614&language=en-US&query=" +
+          searchPattern,
 
         timeout: 2000,
         headers: {
           "Content-Type": "application/json;charset=utf-8",
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkYTA1YWEzMTE0YjE0NmIyZGQ5MzAzZGFkMTY" +
-            "xYzYxNCIsInN1YiI6IjYwN2Q1YzkwNjZmMmQyMDA0MGI1MWE0NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJd" +
-            "LCJ2ZXJzaW9uIjoxfQ.KJZDEtg4yZqbATKcNtQ69qIov16DCH5_fcdXYVRSDaA",
         },
       });
 
