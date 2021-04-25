@@ -14,14 +14,9 @@
 .homepage-img h1 {
   font-family: "Sacramento", cursive;
   color: whitesmoke;
-  padding-top: 50px;
+  padding: 100px 0;
+  /* padding-bottom: 50px; */
   font-size: 10em;
-}
-
-.homepage-img p {
-  font-family: "Trebuchet MS", Arial, sans-serif;
-  font-size: 3em;
-  color: aqua;
 }
 
 .homepage-img a {
